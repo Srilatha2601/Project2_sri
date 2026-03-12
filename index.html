@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2 style="color: #4ea951;">User Registration</h2>
+
+  <form action="/submit" method="POST" onsubmit="return validateForm(this)">
+    <label style="display: block; margin: 10px 0 5px;">Username:</label>
+    <input type="text" name="username" style="padding: 5px; width: 300px;" required>
+
+    <label style="display: block; margin: 10px 0 5px;">Email:</label>
+    <input type="email" name="email" style="padding: 5px; width: 300px;" required>
+
+    <label style="display: block; margin: 10px 0 5px;">Password:</label>
+    <input type="password" name="password" style="padding: 5px; width: 300px;" required>
+
+    <input type="submit" value="Register"
+           style="margin-top: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none;">
+  </form>
+
+  <script>
+    function validateForm(form) {
+      const email = form.email.value;
+      const password = form.password.value;
+
+      if (!email.includes("@")) {
+        alert("Please enter a valid email.");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+</body>
+</html>
